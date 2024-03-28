@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import { Link } from "expo-router";
 import appStyle from './appstyle';
 
 const listItems = [
@@ -45,11 +46,12 @@ export default function App() {
 
       </View>
       <View>
-        <Button 
-          onPress={() => alert('View Transcriptions')}
-          title="View Transcriptions"
-          accessibilityLabel='View Transcriptions'
-        />
+        <Link href="/transcriptions" asChild>
+          <Button 
+            title="View Transcriptions"
+            accessibilityLabel='View Transcriptions'
+          />
+        </Link>
       </View>
       <StatusBar style="auto" />
     </View>
