@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import appStyle from './appstyle';
 
 const listItems = [
   {
@@ -22,23 +23,23 @@ const listItems = [
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <View style={styles.content}>
-        <Text style={styles.heading}>VN 2 Text</Text>
-        <Text style={styles.content}>
+    <View style={appStyle.container}>
+      <View>
+        <Text style={appStyle.heading}>VN 2 Text</Text>
+        <Text style={appStyle.content}>
           Welcome to VN 2 Text, a simple application designed to transcribe WhatsApp voice notes into text!
         </Text>
-        <Text style={styles.content}>
+        <Text style={appStyle.content}>
           To use it:
         </Text>
         
         {listItems.map((item) => (
           <View key={item.id} style={styles.item}>
-            <Text style={[styles.content, styles.listItems]}>{item.content}</Text>
+            <Text style={[appStyle.content, styles.listItems]}>{item.content}</Text>
           </View>
         ))}
 
-        <Text style={styles.content}>
+        <Text style={appStyle.content}>
           Thanks for using it! Enjoy!
         </Text>
 
@@ -56,27 +57,14 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  heading : {
-    fontSize: 30,
-    textAlign: 'center',
-  },
   fitContent: {
     maxHeight: 'fit-content',
     height: 'fit-content',
     border: '1px solid black',
   },
-  content: {
-    fontSize: 20,
-  },
   listItems: {
     paddingLeft: 20,
     margin: 5,
   },  
-  container: {
-    margin: 5,
-    marginTop: 40,
-    backgroundColor: '#fff',
-    flex: 1,
-    justifyContent: 'space-between'
-  },
+  
 });
