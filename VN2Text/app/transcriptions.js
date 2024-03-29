@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, FlatList, Button, View, Pressable } from 'react-native';
 import { Link } from 'expo-router';
 import { FontAwesome } from '@expo/vector-icons';
-import appStyle from './appstyle';
+import appStyle from '../appstyle';
 
 const transcriptionData = [
     {
