@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "VN2Text",
     "name": "VN2Text",
     "slug": "VN2Text",
     "version": "1.0.0",
@@ -28,7 +29,19 @@
       "bundler": "metro"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "expo-share-intent",
+        {
+          "iosActivationRules": {
+            "NSExtensionActivationSupportsWebURLWithMaxCount": 1,
+            "NSExtensionActivationSupportsWebPageWithMaxCount": 1,
+            "NSExtensionActivationSupportsImageWithMaxCount": 1,
+            "NSExtensionActivationSupportsMovieWithMaxCount": 1
+          },
+          "androidIntentFilters": ["audio/*"]
+        }
+      ]
     ]
   }
 }

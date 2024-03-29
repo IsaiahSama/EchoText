@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import { useShareIntent } from 'expo-share-intent';
 import { Link } from "expo-router";
 import appStyle from '../appstyle';
 
@@ -23,6 +24,9 @@ const listItems = [
 ]
 
 export default function App() {
+
+  const { hasShareIntent, shareIntent, resetShareIntent, error } = useShareIntent({debug: true, resetOnBackground: true});
+
   return (
     <View style={appStyle.container}>
       <View>
@@ -44,6 +48,11 @@ export default function App() {
           Thanks for using it! Enjoy!
         </Text>
 
+      </View>
+      <View>
+        <Text>
+          {hasShareIntent ? "SHARE INTENT FOUND!" : "SHARE INTENT NOT FOUND"}
+        </Text>
       </View>
       <View>
         <Link href="/transcriptions" asChild>
